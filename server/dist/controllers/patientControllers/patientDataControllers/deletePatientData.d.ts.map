@@ -1,0 +1,1 @@
+{"version":3,"file":"deletePatientData.d.ts","sourceRoot":"","sources":["../../../../src/controllers/patientControllers/patientDataControllers/deletePatientData.ts"],"names":[],"mappings":"AAAA,OAAO,KAAK,EAAE,OAAO,EAAE,QAAQ,EAAE,YAAY,EAAE,MAAM,SAAS,CAAC;AAM/D,QAAA,MAAM,uBAAuB,GAC3B,KAAK,OAAO,EACZ,KAAK,QAAQ,EACb,MAAM,YAAY,uDAoDnB,CAAC;AAEF,eAAe,uBAAuB,CAAC"}

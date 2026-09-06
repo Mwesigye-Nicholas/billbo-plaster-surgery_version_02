@@ -1,0 +1,1 @@
+{"version":3,"file":"streamPatientImage.d.ts","sourceRoot":"","sources":["../../../../src/controllers/patientControllers/patientImageControllers/streamPatientImage.ts"],"names":[],"mappings":"AAAA,OAAO,KAAK,EAAE,OAAO,EAAE,QAAQ,EAAE,YAAY,EAAE,MAAM,SAAS,CAAC;AAS/D;;GAEG;AACH,QAAA,MAAM,kBAAkB,GAAU,KAAK,OAAO,EAAE,KAAK,QAAQ,EAAE,MAAM,YAAY,kBAgD9E,CAAA;AAEH,eAAe,kBAAkB,CAAC"}

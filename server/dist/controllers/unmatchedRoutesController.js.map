@@ -1,0 +1,1 @@
+{"version":3,"file":"unmatchedRoutesController.js","sourceRoot":"","sources":["../../src/controllers/unmatchedRoutesController.ts"],"names":[],"mappings":"AACA,OAAO,QAAQ,MAAM,sBAAsB,CAAA;AAE3C,MAAM,qBAAqB,GAAG,CAAE,GAAY,EAAE,GAAa,EAAE,IAAkB,EAAE,EAAE;IAC/E,OAAO,IAAI,CAAC,IAAI,QAAQ,CAAC,SAAS,GAAG,CAAC,WAAW,YAAY,EAAE,GAAG,CAAC,CAAC,CAAC;AACzE,CAAC,CAAA;AACD,eAAe,qBAAqB,CAAC"}

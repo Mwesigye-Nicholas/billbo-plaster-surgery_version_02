@@ -1,0 +1,1 @@
+{"version":3,"file":"addPatientImage.d.ts","sourceRoot":"","sources":["../../../../src/controllers/patientControllers/patientImageControllers/addPatientImage.ts"],"names":[],"mappings":"AAAA,OAAO,KAAK,EAAE,OAAO,EAAE,QAAQ,EAAE,YAAY,EAAE,MAAM,SAAS,CAAC;AAc/D,QAAA,MAAM,gBAAgB,GACpB,KAAK,OAAO,EACZ,KAAK,QAAQ,EACb,MAAM,YAAY,uDA6HnB,CAAC;AAEF,eAAe,gBAAgB,CAAC"}

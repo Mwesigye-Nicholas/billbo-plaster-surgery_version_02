@@ -1,0 +1,1 @@
+{"version":3,"file":"deletePatientImage.d.ts","sourceRoot":"","sources":["../../../../src/controllers/patientControllers/patientImageControllers/deletePatientImage.ts"],"names":[],"mappings":"AAAA,OAAO,KAAK,EAAE,OAAO,EAAE,QAAQ,EAAE,YAAY,EAAE,MAAM,SAAS,CAAC;AAQ/D,QAAA,MAAM,kBAAkB,GACtB,KAAK,OAAO,EACZ,KAAK,QAAQ,EACb,MAAM,YAAY,uDAmEnB,CAAC;AACF,eAAe,kBAAkB,CAAC"}

@@ -1,0 +1,1 @@
+{"version":3,"file":"calculateAge.d.ts","sourceRoot":"","sources":["../../src/utils/calculateAge.ts"],"names":[],"mappings":"AAYA,MAAM,WAAW,YAAY;IAC3B,KAAK,EAAE,MAAM,CAAC;IACd,MAAM,EAAE,MAAM,CAAC;IACf,KAAK,EAAE,MAAM,CAAC;CACf;AAED;;;GAGG;AACH,iBAAS,YAAY,CAAC,GAAG,EAAE,MAAM,GAAG,IAAI,GAAG,YAAY,CAwBtD;AACD,eAAe,YAAY,CAAC"}

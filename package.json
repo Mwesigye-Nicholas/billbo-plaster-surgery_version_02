@@ -1,0 +1,77 @@
+{
+  "name": "billbo-app",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "dist-electron/main.js",
+  "scripts": {
+    "build:frontend": "cd client && npm run build",
+    "build:backend": "cd server && npm run build",
+    "build:electron": "tsc -p electron/tsconfig.json",
+    "build": "npm run build:frontend && npm run build:backend && npm run build:electron",
+    "electron": "npm run build:electron && electron .",
+    "dist": "npm run build && electron-builder"
+  },
+  "dependencies": {
+    "mongodb": "^7.2.0",
+    "react-to-print": "^3.3.0",
+    "react-toastify": "^11.1.0"
+  },
+  "devDependencies": {
+    "@types/mongodb": "^4.0.6",
+    "@types/react-toastify": "^4.0.2",
+    "@types/node": "^25.6.0",
+    "electron": "^41.4.0",
+    "electron-builder": "^26.8.1",
+    "esbuild": "^0.28.0",
+    "typescript": "^5.9.3"
+  },
+  "description": "Billbo Plastic Surgery Application",
+  "author": "NichKhan Technologies",
+  "build": {
+    "appId": "com.nichkhan-technologies.desktop",
+    "productName": "Billbo Plastic Surgery",
+    "directories": {
+      "output": "release"
+    },
+    "extraResources": [
+      {
+        "from": "electron/bin/",
+        "to": "bin",
+        "filter": [
+          "**/*"
+        ]
+      },
+      {
+        "from": "client/dist",
+        "to": "client/dist"
+      },
+      {
+        "from": "server/dist/",
+        "to": "server/dist",
+        "filter": [
+          "**/*"
+        ]
+      },
+      {
+        "from": "server/node_modules",
+        "to": "server/node_modules"
+      },
+      {
+        "from": "server/package.json",
+        "to": "server/package.json"
+      },
+      {
+        "from": "server/.env",
+        "to": "server/.env"
+      },
+      {
+        "from": "build/icon.ico",
+        "to": "icon.ico"
+      }
+    ],
+    "win": {
+      "target": "nsis",
+      "icon": "build/icon.ico"
+    }
+  }
+}

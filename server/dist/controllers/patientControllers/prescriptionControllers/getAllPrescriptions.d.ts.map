@@ -1,0 +1,1 @@
+{"version":3,"file":"getAllPrescriptions.d.ts","sourceRoot":"","sources":["../../../../src/controllers/patientControllers/prescriptionControllers/getAllPrescriptions.ts"],"names":[],"mappings":"AAAA,OAAO,KAAK,EAAE,OAAO,EAAE,QAAQ,EAAE,YAAY,EAAE,MAAM,SAAS,CAAC;AAK/D,QAAA,MAAM,mBAAmB,GACvB,KAAK,OAAO,EACZ,KAAK,QAAQ,EACb,MAAM,YAAY,uDAmDnB,CAAC;AAEF,eAAe,mBAAmB,CAAC"}
