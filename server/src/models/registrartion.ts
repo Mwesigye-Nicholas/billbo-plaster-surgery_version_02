@@ -14,7 +14,7 @@ interface NextOfKin {
   contactNumber: string[];
 }
 
-type Registration = {
+export type Registration = {
   name: string;
   sex: Sex;
   address: string;
