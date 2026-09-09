@@ -1,29 +1,8 @@
 import mongoose from "mongoose";
+import type { Registration } from "../zodSchemaType/registration.schema";
 
 const { Schema, model } = mongoose;
 
-type Sex = "Male" | "Female" | "Prefer Not Say";
-
-interface PhoneNumber {
-  phoneType: "Home" | "Work" | "Mobile";
-  number: string;
-}
-
-interface NextOfKin {
-  name: string;
-  contactNumber: string[];
-}
-
-export type Registration = {
-  name: string;
-  sex: Sex;
-  address: string;
-  dateOfBirth: Date;
-  phoneNumbers: PhoneNumber[];
-  email: string;
-  nextOfKin: NextOfKin;
-  patientId: string;
-};
 
 const registrationDataSchema = new Schema<Registration>(
   {

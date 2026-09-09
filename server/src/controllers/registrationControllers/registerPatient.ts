@@ -1,18 +1,22 @@
 import type { Request, Response, NextFunction } from "express";
-import { registrationSchema, type Registration } from "../../zodSchemaType/registration.schema";
+import { registrationSchema } from "../../zodSchemaType/registration.schema";
+import AppError from "../../utils/appError";
+import {z, ZodError } from "zod";
 
 
 const registerNewPatient = async (req:Request, res: Response, next: NextFunction): Promise<void> => {
-  const [
-    name,
-    sex,
-    address,
-    dateOfBirth,
-    phoneNumbers,
-    email,
-    nextOfKin,
-    patientId,
-  ] = req.body;
+
+ try {
+   const registrationData = registrationSchema.parse(req.body);
+ } catch (error) {
+
+  if (error instanceof ZodError){
+
+  }
+
+  
+ }
+  
 };
 
 export default registerNewPatient;

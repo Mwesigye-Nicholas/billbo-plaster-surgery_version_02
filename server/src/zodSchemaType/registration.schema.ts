@@ -1,4 +1,4 @@
-import z, { email } from "zod";
+import z from "zod";
 
 const sexSchema = z.enum(["Male", "Female", "Prefer Not Say"]);
 
@@ -18,7 +18,7 @@ export const registrationSchema = z.object({
     sex: sexSchema,
     address: z.string(),
     dateOfBirth: z.date(),
-    PhoneNumbers: z.array(PhoneNumberSchema),
+    phoneNumbers: z.array(PhoneNumberSchema),
     email: z.email(),
     nextOfKin: nextOfKinSchema,
     patientId: z.string().min(1)
