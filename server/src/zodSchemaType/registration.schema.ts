@@ -17,7 +17,7 @@ export const registrationSchema = z.object({
     name: z.string().min(2),
     sex: sexSchema,
     address: z.string(),
-    dateOfBirth: z.date(),
+    dateOfBirth: z.coerce.date(),
     phoneNumbers: z.array(PhoneNumberSchema),
     email: z.email(),
     nextOfKin: nextOfKinSchema,
