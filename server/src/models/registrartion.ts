@@ -122,7 +122,7 @@ const registrationDataSchema = new Schema<Registration>(
   { timestamps: true },
 );
 
-const Registration = model<Registration>(
+const RegistrationDataModel = model<Registration>(
   "Registration",
   registrationDataSchema,
 );
@@ -130,6 +130,6 @@ const Registration = model<Registration>(
 registrationDataSchema.index({ name: 1 });
 registrationDataSchema.index({ patientId: 1 }, { unique: true });
 
-await Registration.createIndexes();
+await RegistrationDataModel.createIndexes();
 
-export default Registration;
+export default RegistrationDataModel;
