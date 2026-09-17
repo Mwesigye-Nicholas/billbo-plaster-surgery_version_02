@@ -1,10 +1,10 @@
 import type { Request, Response, NextFunction } from "express";
-import { registrationSchema } from "../../zodSchemaType/registration.schema";
-import RegistrationDataModel from "../../models/registrartion";
-import AppError from "../../utils/appError";
+import { registrationSchema } from "../../../zodSchemaType/registration.schema";
+import RegistrationDataModel from "../../../models/registrartion";
 import { ZodError } from "zod";
-import generatePatientId from "../../utils/generatePatientId";
+import generatePatientId from "../../../utils/generatePatientId";
 import { MongoServerError } from "mongodb";
+import AppError from "../../../utils/appError";
 
 const registerNewPatient = async (
   req: Request,
@@ -47,7 +47,7 @@ const registerNewPatient = async (
       return res.status(409).json({
         success: false,
         message: "A patient with this ID already exists.",
-      });
+      })
     } else {
       return next(
         error instanceof AppError

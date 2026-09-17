@@ -21,7 +21,7 @@ export const registrationSchema = z.object({
     phoneNumbers: z.array(PhoneNumberSchema),
     email: z.email(),
     nextOfKin: nextOfKinSchema,
-    patientId: z.string().min(1)
+    patientId: z.string().min(1) 
 
 });
 
