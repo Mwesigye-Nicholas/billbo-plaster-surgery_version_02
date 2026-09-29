@@ -14,7 +14,7 @@ const registerNewPatient = async (
   try {
     const registrationData = registrationSchema.parse(req.body);
 
-    let { name } = registrationData;
+    const { name } = registrationData;
 
     registrationData.patientId = await generatePatientId();
 

@@ -1,7 +1,10 @@
 import mongoose from "mongoose";
+import type { TriageSchema } from "../zodSchemaType/triage.schema";
 
 const {Schema, model} = mongoose;
 
+/**
+ * 
 type PatientVitals = {
     systolicBP?: number;
     diastolicBP?: number;
@@ -13,8 +16,9 @@ type PatientVitals = {
     date?: Date;
 }
 
+ */
 
-const triageDataSchema = new Schema<PatientVitals>({
+const triageDataSchema = new Schema<TriageSchema>({
 
      systolicBP: {
         type : Number,
@@ -52,5 +56,5 @@ const triageDataSchema = new Schema<PatientVitals>({
 
 });
 
- const TriageData = model<PatientVitals>("TriageData", triageDataSchema);
+ const TriageData = model<TriageSchema>("TriageData", triageDataSchema);
  export default TriageData;
