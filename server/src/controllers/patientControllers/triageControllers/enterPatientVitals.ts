@@ -9,7 +9,6 @@ import { MongoServerError } from "mongodb";
 const enterPatientVitals = async (req: Request, res: Response, next: NextFunction) => {
   const { patientId } = req.params;
 
-  const triagePatientData = triageSchema.parse(req.body);
 
   if (!patientId) {
     return res.status(400).json({
@@ -19,6 +18,7 @@ const enterPatientVitals = async (req: Request, res: Response, next: NextFunctio
   }
 
   try {
+     const triagePatientData = triageSchema.parse(req.body);
     const isPatientRegistered = await RegistrationDataModel.findOne({ patientId }).select("name");
 
     if (!isPatientRegistered) {
