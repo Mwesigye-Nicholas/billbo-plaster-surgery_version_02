@@ -1,14 +1,11 @@
 import type { Request, Response, NextFunction } from "express";
-import RegistrationDataModel from "../../../models/registrartion";
-import TriageData from "../../../models/triageData";
 import AppError from "../../../utils/appError";
-import { triageSchema} from "../../../zodSchemaType/triage.schema";
-import {  ZodError } from "zod";
-import { MongoServerError } from "mongodb";
-
+import { triageSchema } from "../../../zodSchemaType/triage.schema";
+import { ZodError } from "zod";
+import TriageDataModel from "../../../models/triageData";
+import RegistrationDataModel from "../../../models/registrartion";
 const enterPatientVitals = async (req: Request, res: Response, next: NextFunction) => {
   const { patientId } = req.params;
-
 
   if (!patientId) {
     return res.status(400).json({
@@ -18,17 +15,17 @@ const enterPatientVitals = async (req: Request, res: Response, next: NextFunctio
   }
 
   try {
-     const triagePatientData = triageSchema.parse(req.body);
-    const isPatientRegistered = await RegistrationDataModel.findOne({ patientId }).select("name");
+    const triagePatientData = triageSchema.parse(req.body);
+    const patient = await RegistrationDataModel.findOne({ patientId }).select("name");
 
-    if (!isPatientRegistered) {
+    if (!patient) {
       return res.status(404).json({
         success: false,
         message: "Patient is not registered please register the patient first.",
       });
     }
 
-    await TriageData.create(triagePatientData);
+    await TriageDataModel.create(triagePatientData);
 
     return res.status(201).json({
       success: true,
@@ -42,13 +39,8 @@ const enterPatientVitals = async (req: Request, res: Response, next: NextFunctio
           message: issue.message,
         })),
       });
-    } else if (error instanceof MongoServerError && error.code === 1100) {
-      return res.status(409).json({
-        success: false,
-        message: "A patient with this ID already exists.",
-      });
-    } else{
-        return next(error instanceof AppError ? error : new AppError("Internal Server Error", 500));
+    } else {
+      return next(error instanceof AppError ? error : new AppError("Internal Server Error", 500));
     }
   }
 };

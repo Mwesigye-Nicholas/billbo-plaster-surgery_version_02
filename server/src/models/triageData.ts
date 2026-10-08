@@ -3,13 +3,13 @@ const {Schema, model} = mongoose;
 
 
 type PatientVitals = {
-    systolicBP?: number;
-    diastolicBP?: number;
-    pulse?: number;
-    temp?: number;
-    spo2?: number;
-    height?: number;
-    weight?: number;
+    systolicBP?: number | undefined;
+    diastolicBP?: number | undefined;
+    pulse?: number | undefined;
+    temp?: number | undefined;
+    spo2?: number | undefined;
+    height?: number | undefined;
+    weight?: number | undefined;
     date?: Date
    
 }
@@ -53,5 +53,5 @@ const triageDataSchema = new Schema<PatientVitals>({
 
 });
 
- const TriageData = model<PatientVitals>("TriageData", triageDataSchema);
- export default TriageData;
+ const TriageDataModel = model<PatientVitals>("TriageData", triageDataSchema);
+ export default TriageDataModel;
