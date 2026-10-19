@@ -11,7 +11,7 @@ type PatientVitals = {
     height?: number | undefined;
     weight?: number | undefined;
     date?: Date
-   
+    patientRegId: mongoose.Types.ObjectId
 }
 
 
@@ -50,6 +50,11 @@ const triageDataSchema = new Schema<PatientVitals>({
         type: Date,
         default: Date.now
     },
+    patientRegId: {
+        type: mongoose.Schema.Types.ObjectId,
+        required: true,
+        ref: "Registration"
+    }
 
 });
 

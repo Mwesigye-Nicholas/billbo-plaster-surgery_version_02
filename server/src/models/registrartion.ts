@@ -73,7 +73,7 @@ const registrationDataSchema = new Schema<Registration>(
           trim: true,
           validate: {
             validator: function (number: string) {
-              return /^\+256[0-9]{9}$/;
+              return /^\+256[0-9]{9}$/.test(number);
             },
             message: "Invalid Phone Number Format",
           },
