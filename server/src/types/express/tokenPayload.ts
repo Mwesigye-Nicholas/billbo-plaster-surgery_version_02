@@ -1,11 +1,11 @@
-import jwt, { type JwtPayload } from "jsonwebtoken";
+import  { type JwtPayload } from "jsonwebtoken";
 
 
 export interface BaseTokenPayload extends  JwtPayload {
     sub: string;
   name: string;
   email: string;
-  role: "surgeon" | "admin" | "assistant";
+  role: "surgeon" | "nurse" | "doctor" | "admin";
 }
 export interface RefreshTokenPayload extends BaseTokenPayload {
  

@@ -4,6 +4,7 @@ import { triageSchema } from "../../../zodSchemaType/triage.schema";
 import { ZodError } from "zod";
 import TriageDataModel from "../../../models/triageData";
 import RegistrationDataModel from "../../../models/registrartion";
+
 const enterPatientVitals = async (req: Request, res: Response, next: NextFunction) => {
   const { patientId } = req.params;
 

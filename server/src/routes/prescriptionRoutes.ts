@@ -2,10 +2,10 @@ import express from "express";
 
 import createPrescription from "../controllers/patientControllers/prescriptionControllers/createPrescription.js";
 import authenticateToken from "../middlewares/authenticateUser.js";
-import allowDoctorsAndSurgeonsController from "../middlewares/allowDoctorsAndSurgeons.js";
+import authorizeRoles from "../middlewares/authorizeRoles.js";
 
 const prescriptionRoutes = express.Router();
-prescriptionRoutes.use(authenticateToken, allowDoctorsAndSurgeonsController);
+prescriptionRoutes.use(authenticateToken, authorizeRoles("admin", "doctor", "surgeon"));
 
 prescriptionRoutes.post("/:patientId", createPrescription);
 

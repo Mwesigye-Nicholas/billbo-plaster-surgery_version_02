@@ -1,4 +1,4 @@
-import jwt from "jsonwebtoken";
+import jwt, {TokenExpiredError, JsonWebTokenError}  from "jsonwebtoken";
 import AppError from "../utils/appError.js";
 import type { Request, Response, NextFunction } from "express";
 import { ACCESS_TOKEN_SECRET_KEY} from "../config/env.js";
@@ -25,11 +25,11 @@ const authenticateToken = (req: Request, res: Response, next: NextFunction) => {
     req.user = decoded as Express.UserPayload;// assign to req.user
     
     next();
-  } catch (error: any) {
+  } catch (error: unknown) {
     
-   if (error.name === "TokenExpiredError") {
+   if (error instanceof TokenExpiredError) {
     return next(new AppError("Access token expired", 401));
-  } else if (error.name === "JsonWebTokenError") {
+  } else if (error instanceof JsonWebTokenError) {
     return next(new AppError("Invalid access token", 401));
   }
   return next(new AppError("Internal Server Error", 500));

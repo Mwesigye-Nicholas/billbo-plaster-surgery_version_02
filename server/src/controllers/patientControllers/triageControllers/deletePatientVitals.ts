@@ -3,7 +3,7 @@ import TriageDataModel from "../../../models/triageData";
 import RegistrationDataModel from "../../../models/registrartion";
 import type { Request, Response, NextFunction } from "express";
 
-const deleteAllPatientRegHistroy = async (req: Request, res: Response, next: NextFunction) => {
+const deleteAllPatientTriageHistroy = async (req: Request, res: Response, next: NextFunction) => {
   const { patientId } = req.params;
 
   if (!patientId) {
@@ -44,4 +44,4 @@ const deleteAllPatientRegHistroy = async (req: Request, res: Response, next: Nex
     return next(error instanceof AppError ? error : new AppError("Internal Server Error", 500));
   }
 };
-export default deleteAllPatientRegHistroy;
+export default deleteAllPatientTriageHistroy;

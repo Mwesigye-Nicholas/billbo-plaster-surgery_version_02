@@ -9,6 +9,8 @@ import type { Request, Response, NextFunction } from "express";
 import errorHandler from "./middlewares/errorHandler.js";
 import prescriptionRoutes from "./routes/prescriptionRoutes.js";
 import imagesRouter from "./routes/imageHandlingRouter.js";
+import patientRegistrationRoutes from "./routes/patientRegistrationRoutes.js";
+import patientTriageRoutes from "./routes/patientTriageRoutes.js";
 
 const app = express();
 
@@ -40,6 +42,8 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use("/api/users", userRouter);
 app.use("/api/token", refreshRouter);
+app.use("/api/v_02/patientRegistration", patientRegistrationRoutes);
+app.use("/api/v_02/patientTriage/:patientId", patientTriageRoutes);
 app.use("/api/v1/patients", patientRoutes);
 app.use("/api/v1/prescriptions", prescriptionRoutes);
 app.use("/api/patients/v1/stream", imagesRouter); 
