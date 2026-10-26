@@ -34,17 +34,15 @@ app.use(
   }),
 );
 
-
 //*middleware to parse Json
 app.use(express.json());
 //*middleware to purse URL-encoded data
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use("/api/users", userRouter);
-app.use("/api/token", refreshRouter);
-app.use("/api/v_02/patientRegistration", patientRegistrationRoutes);
-app.use("/api/v_02/patientTriage/:patientId", patientTriageRoutes);
-app.use("/api/v1/patients", patientRoutes);
+app.use("/api/v_02/users", userRouter);//aligned
+app.use("/api/v_02/token", refreshRouter);//aligned
+app.use("/api/v_02/patientRegistration", patientRegistrationRoutes);//aligned
+app.use("/api/v_02/patientTriage/:patientId", patientTriageRoutes);//aligned
 app.use("/api/v1/prescriptions", prescriptionRoutes);
 app.use("/api/patients/v1/stream", imagesRouter); 
 

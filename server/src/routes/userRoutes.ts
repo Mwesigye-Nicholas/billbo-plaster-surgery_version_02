@@ -5,6 +5,8 @@ import registerController from "../controllers/userControllers/register.js";
 
 const userRouter = express.Router();
 
+
+//* public routes
 userRouter.post("/login", loginController);
 userRouter.post("/logout", logoutController);
 userRouter.post("/register", registerController)
